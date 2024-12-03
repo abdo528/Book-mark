@@ -1,0 +1,112 @@
+/* GLOBAL */
+body {
+    background-color: #F7ECDE;
+    font-family: "PT Sans Caption", sans-serif;
+}
+
+::selection {
+    color: #000;
+    background-color: #FEC260;
+}
+
+p {
+    font-size: 1.125rem;
+}
+
+/* HEADLINE */
+h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 3.125rem;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+
+    &::before {
+        content: '';
+        background-color: #FEC260;
+        height: 20px;
+        width: 266px;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        transition: height .3s;
+    }
+
+    &:hover::before {
+        height: 40px;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-block: 40px;
+    font-family: "Righteous", sans-serif;
+    font-size: 1.5625rem;
+    background: linear-gradient(to right, #3DA55B, #B3AC49);
+    background-clip: text;
+    color: transparent;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-top: dashed #000 .0625rem;
+        width: 100%;
+        left: 0;
+        top: -15px;
+    }
+
+    &::selection{
+        color: transparent;
+    }
+}
+
+/* INPUT */
+.form-control:focus {
+    border-color: #d99c39;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+/* SUBMIT BUTTON */
+.send {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-bottom: dashed #000 .0625rem;
+        width: 100%;
+        left: 0;
+        bottom: -20px;
+    }
+
+    .btn-danger {
+        background-color: #d1512d;
+        border-color: #d1512d;
+    }
+    
+    .btn:hover {
+        background-color: #bb4120;
+        border-color: #a03315;
+    }
+}
+
+/* BUTTON */
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color: #000;
+    background-color: transparent;
+    border-color: #000;
+}
+
+/* SWEEET SLERT */
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){
+    display: none !important;
+}
+
+div:where(.swal2-container) .swal2-html-container{
+    text-align: start !important;
+}
